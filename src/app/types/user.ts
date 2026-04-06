@@ -2,7 +2,7 @@ import { LoanTypes } from "./loan";
 
 export interface UserTypes {
   name: string;
-  eamil: string;
+  email: string;
   password: string;
   phone: string;
   imageProfile?: string;
