@@ -3,25 +3,27 @@ import { Card, CardContent } from "../ui/card";
 
 const CardComponent = () => {
   return (
-    <Card className="w-90 my-5 bg-[#0a3968] lg:w-full xl:w-[80%]">
-      <CardContent>
-        <div className="flex flex-col space-y-7 p-2">
-          <Button className="h-8 w-40 rounded-full bg-green-300 text-xs text-black hover:bg-green-300">
+    <Card className="my-5 w-full shrink-0 border-none bg-[#0a3968] shadow-md">
+      <CardContent className="p-6 md:p-10 xl:p-14">
+        <div className="flex flex-col space-y-6">
+          <Button className="h-8 w-max rounded-full bg-green-300 px-4 text-xs font-semibold text-[#0a3968] hover:bg-green-400">
             Curadoria da semana
           </Button>
-          <h2 className="my-2 text-xl italic text-white xl:text-5xl">
-            The libary is open.
+
+          <h2 className="text-3xl italic text-white md:text-4xl xl:text-5xl">
+            The library is open.
           </h2>
-          <p className="text-xs text-slate-400 xl:text-lg">
+
+          <p className="max-w-2xl text-sm text-slate-300 md:text-base xl:text-lg">
             Mergulhe em uma coleção meticulosamente selecionada onde cada volume
-            conta história além das páginas.
+            conta uma história além das páginas.
           </p>
 
-          <div className="my-2 flex items-center gap-2">
-            <Button className="cursor-pointer bg-[#062c52] p-4 hover:bg-[#062c52] xl:p-8 xl:text-sm">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <Button className="cursor-pointer bg-[#062c52] px-6 py-5 text-sm hover:bg-[#041d36] xl:px-8 xl:py-6 xl:text-base">
               Começar Leitura
             </Button>
-            <Button className="cursor-pointer bg-slate-500 p-4 hover:bg-slate-500 xl:p-8 xl:text-sm">
+            <Button className="cursor-pointer bg-slate-600 px-6 py-5 text-sm text-white hover:bg-slate-700 xl:px-8 xl:py-6 xl:text-base">
               Ver Catálogo
             </Button>
           </div>
