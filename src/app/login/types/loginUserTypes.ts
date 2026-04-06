@@ -3,5 +3,13 @@ export type LoginUserType = {
   email: string;
   phone: string;
   role: "ADMIN" | "CLIENT";
-  token: string;
+  data: {
+    token: string;
+    user: {
+      name: string;
+      email: string;
+      role: string;
+    };
+  };
+  timestamp: string;
 };
