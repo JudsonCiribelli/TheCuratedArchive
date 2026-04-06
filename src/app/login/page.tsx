@@ -58,9 +58,10 @@ const LoginPage = () => {
         body: JSON.stringify(data),
       });
 
-      if (response.token) {
-        await setToken(response.token);
+      if (response.data && response.data.token) {
+        await setToken(response.data.token);
       }
+      console.log(response.data.token);
 
       router.push("/");
     } catch (error) {
