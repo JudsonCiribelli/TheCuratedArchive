@@ -1,3 +1,4 @@
+"use server";
 import { apiClient } from "../lib/api";
 import { categoryType } from "../types/category";
 
