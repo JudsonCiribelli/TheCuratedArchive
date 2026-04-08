@@ -54,8 +54,6 @@ const HeaderComponent = async () => {
         )}
       </nav>
 
-      <div></div>
-
       {/* --- MENU MOBILE / SHEETS (Mostra no Mobile, Esconde no Desktop) --- */}
       <div className="md:hidden">
         <SheetsComponent user={user} />
