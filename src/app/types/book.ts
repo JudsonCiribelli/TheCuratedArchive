@@ -7,5 +7,9 @@ export interface BookTypes {
   bookImage: string;
   status: string;
   authorId: string;
+  author: {
+    name: string;
+    id: string;
+  };
   categoryId: string;
 }
