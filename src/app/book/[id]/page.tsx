@@ -56,7 +56,7 @@ const BookDetails = async ({ params }: BookDetailsProps) => {
                 {book.title}
               </h2>
               <p className="text-lg text-[#0a3968]">
-                <span className="text-xs text-black">por</span>{" "}
+                <span className="text-xs text-black">por</span>
                 {book.author.name}
               </p>
             </div>
@@ -107,7 +107,7 @@ const BookDetails = async ({ params }: BookDetailsProps) => {
           <div className="flex items-center gap-5 xl:justify-between">
             <p className="text-lg text-[#052342]">Outros livros deste autor</p>
             <Link
-              href=""
+              href={`/author/${book.authorId}`}
               className="flex items-center justify-center gap-1 text-xs hover:cursor-pointer sm:truncate"
             >
               Ver bibliografia completa
@@ -115,7 +115,6 @@ const BookDetails = async ({ params }: BookDetailsProps) => {
             </Link>
           </div>
 
-          {/* Items-center */}
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {bookFromAuthor.map((book) => (
               <BookItem
