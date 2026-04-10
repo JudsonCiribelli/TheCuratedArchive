@@ -7,23 +7,24 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
-import { Button } from "../_components/ui/button";
+import { Button } from "@/app/_components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../_components/ui/card";
+} from "@/app/_components/ui/card";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "../_components/ui/field";
-import { Input } from "../_components/ui/input";
-import { Separator } from "../_components/ui/separator";
-import { apiClient } from "../lib/api";
-import { setToken } from "../lib/authToken";
+} from "@/app/_components/ui/field";
+import { Input } from "@/app/_components/ui/input";
+import { Separator } from "@/app/_components/ui/separator";
+import { apiClient } from "@/app/lib/api";
+import { setToken } from "@/app/lib/authToken";
+
 import { LoginUserType } from "./types/loginUserTypes";
 
 const loginSchema = z.object({

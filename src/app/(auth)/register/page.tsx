@@ -6,20 +6,21 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
-import { Button } from "../_components/ui/button";
-import { Card, CardContent } from "../_components/ui/card";
-import { Checkbox } from "../_components/ui/checkbox";
+import { Button } from "@/app/_components/ui/button";
+import { Card, CardContent } from "@/app/_components/ui/card";
+import { Checkbox } from "@/app/_components/ui/checkbox";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "../_components/ui/field";
-import { Input } from "../_components/ui/input";
-import { Label } from "../_components/ui/label";
-import { Separator } from "../_components/ui/separator";
-import { formatPhone } from "../helpers/formatPhone";
-import { apiClient } from "../lib/api";
+} from "@/app/_components/ui/field";
+import { Input } from "@/app/_components/ui/input";
+import { Label } from "@/app/_components/ui/label";
+import { Separator } from "@/app/_components/ui/separator";
+import { formatPhone } from "@/app/helpers/formatPhone";
+import { apiClient } from "@/app/lib/api";
+
 import { RegisterUserType } from "./types/registerUserTypes";
 
 const registerSchema = z.object({
@@ -37,11 +38,11 @@ const registerSchema = z.object({
     .refine((val) => /^[1-9]{2}9[0-9]{8}$/.test(val), {
       message: "Número de telefone inválido.",
     }),
-  // AJUSTE 1: Senha com mínimo de 6 caracteres
+
   password: z
     .string()
     .min(6, { message: "A senha deve ter no mínimo 6 caracteres" }),
-  // AJUSTE 2: Validação obrigatória para o Checkbox
+
   terms: z.boolean().refine((val) => val === true, {
     message: "Você precisa aceitar os Termos de Uso.",
   }),
