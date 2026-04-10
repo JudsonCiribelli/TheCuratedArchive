@@ -26,7 +26,7 @@ const HeaderComponent = async () => {
           <LayoutGrid size={16} /> Explorar
         </Link>
         <Link
-          href="/"
+          href="/authorPage"
           className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#0a3968]"
         >
           <Book size={16} /> Autores
