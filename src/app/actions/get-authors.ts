@@ -4,7 +4,7 @@ import { AuthorTypes } from "../types/author";
 
 export async function getAuthors() {
   try {
-    const response = await apiClient<AuthorTypes[]>("/author", {
+    const response = await apiClient<AuthorTypes>("/author", {
       method: "GET",
     });
 
