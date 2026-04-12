@@ -13,7 +13,7 @@ interface AuthorDetailsProps {
   params: Promise<{ authorId: string }>;
 }
 
-const AuthorPage = async ({ params }: AuthorDetailsProps) => {
+const AuthorDetails = async ({ params }: AuthorDetailsProps) => {
   const { authorId } = await params;
 
   const author = await getAuthorById(authorId);
@@ -91,4 +91,4 @@ const AuthorPage = async ({ params }: AuthorDetailsProps) => {
   );
 };
 
-export default AuthorPage;
+export default AuthorDetails;
