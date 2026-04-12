@@ -15,6 +15,7 @@ export interface AuthorTypes {
       bookImage: string;
       category: {
         name: string;
+        id: string;
       };
     },
   ];
