@@ -1,6 +1,7 @@
 import { LoanTypes } from "./loan";
 
 export interface UserTypes {
+  id: string;
   name: string;
   email: string;
   password: string;
