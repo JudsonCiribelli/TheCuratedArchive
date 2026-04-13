@@ -117,7 +117,8 @@ const SheetsComponent = ({ user }: { user: SheetsProps | null }) => {
             </Link>
 
             <Link
-              href="/"
+              href="/authorPage"
+              onClick={handleLinkNavigation}
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "flex h-10 w-full cursor-pointer items-center justify-start gap-2 bg-[#0a3968] hover:bg-[#082a4d]",
@@ -129,6 +130,7 @@ const SheetsComponent = ({ user }: { user: SheetsProps | null }) => {
 
             <Link
               href="/"
+              onClick={handleLinkNavigation}
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "flex h-10 w-full cursor-pointer items-center justify-start gap-2 bg-[#0a3968] hover:bg-[#082a4d]",
