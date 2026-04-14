@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import SidebarComponent from "@/app/_components/SideBar-Component/Sidebar-Component";
 import { Button } from "@/app/_components/ui/button";
 import { getCategory } from "@/app/actions/get-categories";
@@ -13,13 +15,15 @@ export default async function MainLayout({
     <div className="flex h-[calc(100vh-80px)] flex-col overflow-hidden bg-[#dedee6]">
       <nav className="flex shrink-0 items-center gap-2 overflow-x-auto bg-white p-3 shadow-sm lg:justify-center xl:hidden">
         {categories.map((categorie) => (
-          <Button
-            key={categorie.id}
-            variant="outline"
-            className="h-8 shrink-0 rounded-full text-xs"
-          >
-            {categorie.name}
-          </Button>
+          <Link href={`/category/${categorie.id}`} key={categorie.id}>
+            <Button
+              key={categorie.id}
+              variant="outline"
+              className="h-8 shrink-0 rounded-full text-xs"
+            >
+              {categorie.name}
+            </Button>
+          </Link>
         ))}
       </nav>
 
