@@ -14,3 +14,29 @@ export async function getAuthors() {
     return [];
   }
 }
+
+export async function getAuthorById(authorId: string): Promise<AuthorTypes> {
+  try {
+    const response = await apiClient<AuthorTypes>(`/author/${authorId}`, {
+      method: "GET",
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Autor não  encontrado");
+  }
+}
+
+export async function getAllAuthors(): Promise<AuthorTypes[]> {
+  try {
+    const response = await apiClient<AuthorTypes[]>("/author", {
+      method: "GET",
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error ao buscar autores");
+  }
+}
