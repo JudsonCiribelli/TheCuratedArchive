@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Badge } from "@/app/_components/ui/badge";
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
-import { getAuthorById } from "@/app/actions/get-author-by-id";
-import { getBookByAuthorId } from "@/app/actions/get-book-by-author-id";
+import { getAuthorById } from "@/app/actions/get-authors";
+import { getBookByAuthorId } from "@/app/actions/get-books";
 import BookItem from "@/app/book/[id]/_components/Book-Item/Book-item";
 
 interface AuthorDetailsProps {
