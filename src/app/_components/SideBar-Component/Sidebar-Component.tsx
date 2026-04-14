@@ -16,7 +16,7 @@ const SidebarComponent = ({ categories }: { categories: categoryType[] }) => {
       </div>
       <div className="flex flex-col gap-1 p-2">
         {categories.map((categorie) => (
-          <SideBarButton href="/" key={categorie.id}>
+          <SideBarButton href={`/category/${categorie.id}`} key={categorie.id}>
             <BookOpenText size={10} />
             {categorie.name}
           </SideBarButton>
