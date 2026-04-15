@@ -21,6 +21,7 @@ import { Separator } from "../ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 interface SheetsProps {
+  id: string;
   name: string;
   email: string;
   password?: string;
@@ -129,7 +130,7 @@ const SheetsComponent = ({ user }: { user: SheetsProps | null }) => {
             </Link>
 
             <Link
-              href="/"
+              href={`/user/${user?.id}`}
               onClick={handleLinkNavigation}
               className={cn(
                 buttonVariants({ variant: "default" }),
