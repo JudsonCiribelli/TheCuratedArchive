@@ -1,4 +1,6 @@
-import { BookOpen, BookOpenText } from "lucide-react";
+import { Bookshelf03Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { BookOpen } from "lucide-react";
 
 import { categoryType } from "@/app/types/category";
 
@@ -17,7 +19,7 @@ const SidebarComponent = ({ categories }: { categories: categoryType[] }) => {
       <div className="flex flex-col gap-1 p-2">
         {categories.map((categorie) => (
           <SideBarButton href={`/category/${categorie.id}`} key={categorie.id}>
-            <BookOpenText size={10} />
+            <HugeiconsIcon icon={Bookshelf03Icon} />
             {categorie.name}
           </SideBarButton>
         ))}
