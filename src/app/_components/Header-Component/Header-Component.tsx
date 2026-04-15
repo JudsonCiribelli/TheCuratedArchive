@@ -13,7 +13,7 @@ const HeaderComponent = async () => {
   return (
     <header className="h-18 flex items-center justify-between bg-white p-2">
       <Button className="bg-transparent hover:bg-white">
-        <Link className="text-normal text-lg text-[#0a3968]" href="/">
+        <Link className="text-normal text-lg italic text-[#0a3968]" href="/">
           The Curated Archive
         </Link>
       </Button>
@@ -37,7 +37,7 @@ const HeaderComponent = async () => {
         {user ? (
           <div className="flex items-center gap-4">
             <Link
-              href="/"
+              href={`/user/${user.id}`}
               className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#0a3968]"
             >
               <UserRoundPen size={16} /> Meu Perfil
