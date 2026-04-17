@@ -43,3 +43,19 @@ export async function getBookByAuthorId(
     throw new Error("Error ao buscar livro deste autor.");
   }
 }
+
+export async function searchBooks(title: string) {
+  try {
+    const response = await apiClient<BookTypes[]>(
+      `/books/title?title=${encodeURIComponent(title)}`,
+      {
+        method: "GET",
+      },
+    );
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error ao buscar livro!");
+  }
+}
