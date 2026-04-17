@@ -3,11 +3,15 @@ import { apiClient } from "../lib/api";
 import { AuthorBooksType } from "../types/authorBook";
 import { BookTypes } from "../types/book";
 
-export async function getBooks() {
+export async function getBooks(page: number = 1, limit: number = 10) {
   try {
-    const response = await apiClient<{ data: BookTypes[] }>("/books", {
-      method: "GET",
-    });
+    const offset = (page - 1) * limit;
+    const response = await apiClient<{ data: BookTypes[] }>(
+      `/books?limit=${limit}&offset=${offset}`,
+      {
+        method: "GET",
+      },
+    );
 
     return response.data;
   } catch (error) {
