@@ -1,4 +1,4 @@
-import { getAllAuthors } from "@/app/actions/get-authors";
+import { getAllAuthors } from "@/app/actions/authors";
 
 import AuthorCard from "./_components/Author-Card-Component/Author-Card";
 import AuthorData from "./_components/Author-Data-Component/Author-Data";

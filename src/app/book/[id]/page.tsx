@@ -6,7 +6,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Separator } from "@/app/_components/ui/separator";
-import { getBookByAuthorId, getBookById } from "@/app/actions/get-books";
+import { getBookByAuthorId, getBookById } from "@/app/actions/books";
 import { cn } from "@/app/lib/utils";
 
 import BookItem from "./_components/Book-Item/Book-item";

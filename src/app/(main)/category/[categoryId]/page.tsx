@@ -5,10 +5,7 @@ import Link from "next/link";
 
 import { Badge } from "@/app/_components/ui/badge";
 import { Card, CardContent } from "@/app/_components/ui/card";
-import {
-  getBookByCategoryId,
-  getCategoryData,
-} from "@/app/actions/get-categories";
+import { getBookByCategoryId, getCategoryData } from "@/app/actions/categories";
 
 interface CategoryPageProps {
   params: Promise<{ categoryId: string }>;

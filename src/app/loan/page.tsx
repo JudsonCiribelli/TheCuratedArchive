@@ -13,7 +13,7 @@ import { redirect } from "next/navigation";
 import { Badge } from "../_components/ui/badge";
 import { Card, CardContent } from "../_components/ui/card";
 import { Separator } from "../_components/ui/separator";
-import { getBookById } from "../actions/get-books";
+import { getBookById } from "../actions/books";
 import { getToken, getUser } from "../lib/authToken";
 import CardInfo from "./_components/Card-Info-Component/Card-Info-Component";
 import LoanTermsForm from "./_components/Loan-Terms-Form/Loan-Terms-Forms";

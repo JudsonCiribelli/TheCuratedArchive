@@ -4,8 +4,8 @@ import Link from "next/link";
 import CardComponent from "../_components/Card-Component/Card-Component";
 import Pagination from "../_components/Pagination-Component/Pagination-Component";
 import SearchComponent from "../_components/Search-Component/Search-Component";
-import { getBooks } from "../actions/get-books";
-import { getCategory } from "../actions/get-categories";
+import { getBooks } from "../actions/books";
+import { getCategory } from "../actions/categories";
 
 interface HomeProps {
   searchParams: Promise<{ page?: string }>;

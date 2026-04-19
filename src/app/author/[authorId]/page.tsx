@@ -5,9 +5,10 @@ import Link from "next/link";
 import { Badge } from "@/app/_components/ui/badge";
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
-import { getAuthorById } from "@/app/actions/get-authors";
-import { getBookByAuthorId } from "@/app/actions/get-books";
+import { getAuthorById } from "@/app/actions/authors";
+import { getBookByAuthorId } from "@/app/actions/books";
 import BookItem from "@/app/book/[id]/_components/Book-Item/Book-item";
+import { extractYear } from "@/app/helpers/date-utils";
 
 interface AuthorDetailsProps {
   params: Promise<{ authorId: string }>;
@@ -40,7 +41,7 @@ const AuthorDetails = async ({ params }: AuthorDetailsProps) => {
                   <div className="flex items-center gap-1">
                     <p className="text-sm">São Paulo, Brasil</p>
                     <div className="h-1 w-1 rounded-full bg-black"></div>
-                    <p className="text-sm">1990</p>
+                    <p className="text-sm">{extractYear(author.birthDate)}</p>
                     <p className="text-sm">Presente</p>
                   </div>
                   <p className="text-lg">{author.bio}</p>

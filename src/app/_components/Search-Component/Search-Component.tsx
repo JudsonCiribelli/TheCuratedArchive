@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
-import { searchBooks } from "@/app/actions/get-books";
+import { searchBooks } from "@/app/actions/books";
 import { useDebounce } from "@/app/hooks/useDebounce";
 import { BookTypes } from "@/app/types/book";
 
@@ -78,7 +78,7 @@ const SearchComponent = () => {
                 <Input
                   {...field}
                   type="text"
-                  autoComplete="off" // Previne a caixa nativa do navegador
+                  autoComplete="off"
                   aria-invalid={fieldState.invalid}
                   placeholder="Pesquisar títulos..."
                   className="xl:h-15 h-10 w-full bg-white sm:h-12"
@@ -113,38 +113,34 @@ const SearchComponent = () => {
               </div>
             ) : results.length > 0 ? (
               <ul className="max-h-80 overflow-y-auto">
-                {results.slice(0, 5).map(
-                  (
-                    book, // Mostra só os 5 primeiros
-                  ) => (
-                    <li
-                      key={book.id}
-                      className="border-b border-slate-100 last:border-0 hover:bg-slate-50"
+                {results.slice(0, 5).map((book) => (
+                  <li
+                    key={book.id}
+                    className="border-b border-slate-100 last:border-0 hover:bg-slate-50"
+                  >
+                    <Link
+                      href={`/book/${book.id}`}
+                      className="flex items-center gap-3 p-3"
+                      onClick={() => setShowDropdown(false)}
                     >
-                      <Link
-                        href={`/book/${book.id}`} // Ajuste para a sua rota de detalhes do livro!
-                        className="flex items-center gap-3 p-3"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        <div className="h-12 w-8 shrink-0 overflow-hidden rounded bg-slate-200">
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/files/${book.bookImage}`}
-                            alt={`Capa do livro ${book.title}`}
-                            className="h-full rounded-lg object-cover"
-                          />
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-sm font-semibold text-[#0a3968]">
-                            {book.title}
-                          </span>
-                          <span className="text-xs text-slate-500">
-                            {book.author?.name || "Autor Desconhecido"}
-                          </span>
-                        </div>
-                      </Link>
-                    </li>
-                  ),
-                )}
+                      <div className="h-12 w-8 shrink-0 overflow-hidden rounded bg-slate-200">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/files/${book.bookImage}`}
+                          alt={`Capa do livro ${book.title}`}
+                          className="h-full rounded-lg object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-semibold text-[#0a3968]">
+                          {book.title}
+                        </span>
+                        <span className="text-xs text-slate-500">
+                          {book.author?.name || "Autor Desconhecido"}
+                        </span>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             ) : debouncedSearchTerm.length >= 2 ? (
               <div className="p-4 text-center text-sm text-slate-500">

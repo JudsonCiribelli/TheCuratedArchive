@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import SidebarComponent from "@/app/_components/SideBar-Component/Sidebar-Component";
 import { Button } from "@/app/_components/ui/button";
-import { getCategory } from "@/app/actions/get-categories";
+import { getCategory } from "@/app/actions/categories";
 
 export default async function MainLayout({
   children,
