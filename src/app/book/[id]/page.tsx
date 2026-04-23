@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { ArrowRight, Bookmark, Handbag } from "lucide-react";
+import { ArrowRight, Handbag } from "lucide-react";
 import Link from "next/link";
 
 import { buttonVariants } from "@/app/_components/ui/button";
@@ -10,6 +10,7 @@ import { getBookByAuthorId, getBookById } from "@/app/actions/books";
 import { cn } from "@/app/lib/utils";
 
 import BookItem from "./_components/Book-Item/Book-item";
+import SaveBookComponent from "./_components/Save-Book/Save-Book";
 
 interface BookDetailsProps {
   params: Promise<{ id: string }>;
@@ -106,16 +107,7 @@ const BookDetails = async ({ params }: BookDetailsProps) => {
                 Alugar
               </Link>
 
-              <Link
-                href="/loan"
-                className={cn(
-                  buttonVariants({ variant: "default" }),
-                  "h-15 flex w-40 cursor-pointer items-center gap-1 bg-white text-sm text-[#0a3968] hover:bg-white",
-                )}
-              >
-                <Bookmark size={20} className="text-[#0a3968]" />
-                Salvar
-              </Link>
+              <SaveBookComponent bookId={book.id} />
             </div>
           </div>
         </div>
