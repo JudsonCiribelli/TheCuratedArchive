@@ -1,3 +1,4 @@
+import { BookTypes } from "./book";
 import { LoanTypes } from "./loan";
 
 export interface UserTypes {
@@ -9,5 +10,6 @@ export interface UserTypes {
   imageProfile?: string;
   role: string;
   active: string;
+  books?: BookTypes[];
   loan: LoanTypes[];
 }
