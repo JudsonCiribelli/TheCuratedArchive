@@ -66,6 +66,8 @@ const UserPage = async ({ params }: UserPageProps) => {
                 name={user.name}
                 email={user.email}
                 phone={user.phone}
+                imageProfile={user.imageProfile}
+                id={user.id}
               />
             </div>
           </div>
